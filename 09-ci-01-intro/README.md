@@ -45,6 +45,7 @@
 [task1.xml](https://github.com/Scandr/netology-devops-mnt-homeworks/blob/main/09-ci-01-intro/task1.xml) <br />
 [task2.xml](https://github.com/Scandr/netology-devops-mnt-homeworks/blob/main/09-ci-01-intro/task2.xml) <br />
 [task3.xml](https://github.com/Scandr/netology-devops-mnt-homeworks/blob/main/09-ci-01-intro/task3.xml)
+
 ---
 
 ### Как оформить решение задания
