@@ -37,8 +37,7 @@
 
 ## Ответ
 
-![common_workflow](https://github.com/Scandr/netology-devops-mnt-homeworks/blob/main/09-ci-01-intro
-/common_workflow_setup.PNG).
+![common_workflow](https://github.com/Scandr/netology-devops-mnt-homeworks/blob/main/09-ci-01-intro/common_workflow_setup.PNG).
 ![bug_workflow](https://github.com/Scandr/netology-devops-mnt-homeworks/blob/main/09-ci-01-intro/bug_workflow_setup.PNG)
 
 [bug.xml](https://github.com/Scandr/netology-devops-mnt-homeworks/blob/main/09-ci-01-intro/bug.xml) <br />
