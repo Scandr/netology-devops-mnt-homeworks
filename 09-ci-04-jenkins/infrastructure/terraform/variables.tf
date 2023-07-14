@@ -13,5 +13,6 @@ variable "yandex_folder_id" {
 # Заменить на ID своего образа
 # ID можно узнать с помощью команды yc compute image list
 variable "os_destrib" {
-  default = "fd80d16oleqvtagvi2ht"
+#  default = "fd80d16oleqvtagvi2ht"
+  default = "fd8f5l3798bmqndsmvem"
 }

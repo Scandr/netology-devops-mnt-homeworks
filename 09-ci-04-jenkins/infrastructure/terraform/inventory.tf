@@ -5,10 +5,10 @@ resource "local_file" "inventory" {
 
   [jenkins_masters]
     jenkins-master01.netology.yc ansible_host=${yandex_compute_instance.jenkins-master01.network_interface.0
-.nat_ip_address} ansible_user=ubuntu
+.nat_ip_address} ansible_user=centos
   [jenkins_agents]
     jenkins-agent01.netology.yc ansible_host=${yandex_compute_instance.jenkins-agent01.network_interface.0
-.nat_ip_address} ansible_user=ubuntu
+.nat_ip_address} ansible_user=centos
 
     DOC
   filename = "../inventory/cicd/hosts.yml"

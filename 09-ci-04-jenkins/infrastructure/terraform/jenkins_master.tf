@@ -25,6 +25,6 @@ resource "yandex_compute_instance" "jenkins-master01" {
   }
 
   metadata = {
-    ssh-keys = "ubuntu:${file("/opt/yandex_cloud/id_rsa.pub")}"
+    ssh-keys = "centos:${file("/opt/yandex_cloud/id_rsa.pub")}"
   }
 }
