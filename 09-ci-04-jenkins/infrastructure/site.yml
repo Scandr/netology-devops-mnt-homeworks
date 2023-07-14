@@ -14,11 +14,11 @@
         generate_ssh_key: true
       register: ssh_key_info
 
-    - name: Get Jenkins repo key
-      become: true
-      rpm_key:
-        key: https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
-        state: present
+#    - name: Get Jenkins repo key
+#      become: true
+#      rpm_key:
+#        key: https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+#        state: present
 
     - name: Install JDK
       become: true
@@ -27,7 +27,7 @@
         state: present
 
 - name: Get Jenkins master installed
-  hosts: jenkins_masters
+  hosts: jenkins-master-01
   tasks:
     - name: Get repo Jenkins
       become: true
@@ -38,7 +38,7 @@
     - name: Add Jenkins key
       become: true
       rpm_key:
-        key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+        key: https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
         state: present
         validate_certs: false
     - name: Install epel-release
@@ -62,16 +62,17 @@
         state: present
         key: "{{ lookup('pipe', 'ssh-keyscan {{ hostvars[item].ansible_host }}') }}"
         hash_host: true
-      with_items: "{{ groups.jenkins_agents }}"
+#      with_items: "{{ groups.jenkins-agent-01 }}"
+      with_items: "{{ groups.all }}"
     - name: Start Jenkins
       become: true
       systemd:
         name: jenkins
         state: restarted
         enabled: true
-      when: jenkins_installed is changed
+#      when: jenkins_installed is changed
 - name: Prepare jenkins agent
-  hosts: jenkins_agents
+  hosts: jenkins-agent-01
   become: true
   become_user: "{{ jenkins_user_name }}"
   tasks:
