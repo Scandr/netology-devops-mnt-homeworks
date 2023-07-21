@@ -1,3 +1,9 @@
+properties([
+    parameters([
+        booleanParam(defaultValue: 'false', name: 'prod_run', description: 'Is it a prod deployment?')
+    ])
+])
+
 node("myagent"){
     stage("Git checkout"){
         git url: 'https://github.com/aragastmatb/example-playbook.git'
@@ -7,7 +13,11 @@ node("myagent"){
     }
     stage("Run playbook"){
         if (secret_check){
-            sh 'ansible-playbook site.yml -i inventory/prod.yml'
+            if (prod_run){
+                sh 'ansible-playbook site.yml -i inventory/prod.yml --check --diff'
+            } else {
+                sh 'ansible-playbook site.yml -i inventory/prod.yml'
+            }
         }
         else{
             echo 'need more action'
