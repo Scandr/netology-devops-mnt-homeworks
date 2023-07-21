@@ -1,5 +1,5 @@
 pipeline{
-    agent { myagent }
+    agent { label 'myagent' }
     parameters{
         string(defaultValue: '/opt/ansible/roles', description: 'Enter path to role', name: 'role_path')
         string(defaultValue: 'default', description: 'Enter scenario name', name: 'scenario_name')
