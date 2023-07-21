@@ -1,0 +1,42 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Example assertion
+    assert:
+      that: true
+
+
+  - name: Get validate Vector config results
+    become: true
+    stat:
+      path: "/opt/vector/config/vector.toml"
+#      path: "/etc/vector/vector.toml"
+    register: vector_config_exist
+
+  - name: Validate Vector config existence
+    assert:
+      that:
+        - vector_config_exist.stat.exists == True
+
+  - name: Get validate Vector config results
+    become: true
+    shell:
+      cmd: "vector validate --no-environment /opt/vector/config/vector.toml"
+#      cmd: "vector validate /opt/vector/config/vector.toml"
+    register: vector_config_valid
+    ignore_errors: true
+
+  - name: Output vector_config_valid var
+    debug:
+      var: vector_config_valid
+
+  - name: Validate Vector config existence
+    assert:
+      that:
+        - '"non-zero" not in vector_config_valid'
+
+

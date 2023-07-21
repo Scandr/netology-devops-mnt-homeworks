@@ -1,0 +1,5 @@
+---
+# handlers file for vector-role
+- name: Config vector
+  ansible.builtin.shell:
+    cmd: "vector --config {{ vector_dir }}/config/vector.toml >/dev/null 2>&1 &"
