@@ -34,6 +34,10 @@
 
 После выполнения у вас должно получится два сценария molecule и один tox.ini файл в репозитории. Не забудьте указать в ответе теги решений Tox и Molecule заданий. В качестве решения пришлите ссылку на  ваш репозиторий и скриншоты этапов выполнения задания. 
 
+## Ответ
+[Molecule default scenario](./roles/vector-role/molecule/default) <br />
+[Molecule tox scenario](./roles/vector-role/molecule/tox)
+
 ## Необязательная часть
 
 1. Проделайте схожие манипуляции для создания роли LightHouse.
