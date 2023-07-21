@@ -1,0 +1,21 @@
+pipeline{
+    agent { myagent }
+    parameters{
+        string(defaultValue: '/opt/ansible/roles', description: 'Enter path to role', name: 'role_path'),
+        string(defaultValue: 'default', description: 'Enter scenario name', name: 'scenario_name')
+    }
+    stages{
+        stage("Run molecule test"){
+            steps{
+                script{
+                    sh '''
+                    python3 -m pip install molecule molecule-docker
+                    cd $role_path
+                    molecule init scenario --driver-name docker $scenario_name
+                    molecule test -s $scenario_name
+                    '''
+                }
+            }
+        }
+    }
+}
