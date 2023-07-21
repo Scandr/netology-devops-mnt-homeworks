@@ -1,9 +1,8 @@
-properties([
-    parameters([
-        booleanParam(name: 'prod_run', defaultValue: false,  description: 'Is it prod deploy?')
-])
-
 node("myagent"){
+    properties([
+        parameters([
+            booleanParam(name: 'prod_run', defaultValue: false,  description: 'Is it prod deploy?')
+    ])
     stage("Git checkout"){
         git url: 'https://github.com/aragastmatb/example-playbook.git'
     }
