@@ -1,7 +1,6 @@
 properties([
     parameters([
-        booleanParam(defaultValue: 'false', name: 'prod_run', description: 'Is it a prod deployment?')
-    ])
+        booleanParam(name: 'prod_run', defaultValue: false,  description: 'Is it prod deploy?')
 ])
 
 node("myagent"){
