@@ -39,12 +39,12 @@
 
 Создайте Dashboard и в ней создайте Panels:
 
-- #### утилизация CPU для nodeexporter (в процентах, 100-idle);
+#### - утилизация CPU для nodeexporter (в процентах, 100-idle);
 #### Ответ:
 ```
 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[1m])) * 100)
 ```
-- #### CPULA 1/5/15;
+#### - CPULA 1/5/15;
 #### Ответ:
 ```
 node_load1*100
@@ -52,12 +52,12 @@ node_load5*100
 node_load15*100
 node_load5 / count by (instance, job) (node_cpu_seconds_total{mode="idle"}) * 100
 ```
-- #### количество свободной оперативной памяти;
+#### - количество свободной оперативной памяти;
 #### Ответ:
 ```
 avg_over_time(node_memory_MemFree_bytes[30m])
 ```
-- #### количество места на файловой системе.
+#### - количество места на файловой системе.
 #### Ответ:
 ```
 avg_over_time(node_memory_MemFree_bytes[30m])
