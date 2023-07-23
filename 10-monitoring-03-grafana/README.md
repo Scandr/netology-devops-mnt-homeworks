@@ -80,7 +80,9 @@ avg_over_time(node_memory_MemFree_bytes[30m])
 2. В качестве решения задания приведите листинг этого файла.
 
 #### Ответ:
+
 [full_dashboard.json](./full_dashboard.json)
+
 ---
 
 ### Как оформить решение задания
