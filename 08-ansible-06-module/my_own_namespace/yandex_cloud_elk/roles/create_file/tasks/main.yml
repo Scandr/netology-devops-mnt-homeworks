@@ -1,0 +1,7 @@
+---
+# tasks file for create_file
+#
+- name: Create a file
+  my_own_namespace.yandex_cloud_elk.my_own_module:
+    file_path: "{{ file_path }}"
+    file_content: "{{ file_content }}"

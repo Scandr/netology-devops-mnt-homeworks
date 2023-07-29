@@ -1,0 +1,7 @@
+- name: Create some file with content
+  hosts: localhost
+  vars:
+    file_path: "/home/yelena/test01.txt"
+    file_content: "my content"
+  roles: 
+    - create_file

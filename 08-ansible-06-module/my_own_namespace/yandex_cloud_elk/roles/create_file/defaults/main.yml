@@ -1,0 +1,5 @@
+---
+# defaults file for create_file
+#
+file_path: "/tmp/test00.txt"
+file_content: "this is a simple line\n and this is another line"
