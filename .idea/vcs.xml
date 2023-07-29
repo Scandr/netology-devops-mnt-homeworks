@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/08-ansible-04-role/roles/clickhouse-role" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/08-ansible-04-role/roles/lighthouse-role" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/08-ansible-04-role/roles/vector-role" vcs="Git" />
-  </component>
-</project>

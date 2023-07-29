@@ -1,3 +1,32 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ##Предварительно выполнить на Linux хосте команду: sudo sysctl -w vm.max_map_count=262144
 ##https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_set_vm_max_map_count_to_at_least_262144
 #
@@ -74,10 +103,9 @@ services:
       - es-warm
 
   logstash:
-    image: logstash:8.7.0
+    image: logstash:6.5.1
+
     container_name: logstash
-    environment:
-      - "LS_JAVA_OPTS=-Xms256m -Xmx256m"
     ports:
       - 5046:5046
       - 5044:5044
@@ -91,7 +119,7 @@ services:
       - es-warm
 
   filebeat:
-    image: elastic/filebeat:8.7.0
+    image: elastic/filebeat:7.2.0
     container_name: filebeat
     privileged: true
     user: root
